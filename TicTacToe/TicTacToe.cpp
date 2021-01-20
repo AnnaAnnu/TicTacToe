@@ -30,31 +30,113 @@ void Draw(){
 
     void Input(){
         int a;// integer for input
-        cout<<"Press the no. of field:";
+        // to define whos turn is now.
+        cout<<"It's"<<" "<<player<<" "<<"turn."<<" "<<"Press the no. of field:";
         cin>>a;
-
+        
         // Setting the first field of the matrix to X i.e; player which simplifies the stuff and we dont need to check the number and print it. here we just directly print the character in the matrix;
         
         if(a==1)
-        matrix[0][0]= player;
+        {
+            if (matrix[0][0] == '1')
+            matrix [0][0] = player;
+            else
+            {
+                cout<<"Field is already occupied"<<endl;
+                Input();
+            }
+        }
         else if(a==2)
-        matrix[0][1]= player;
+        {
+            if (matrix[0][1] =='2')
+                matrix[0][1]= player;
+            else
+            {
+               cout<<"Field is occupied Try Again!"<< endl;
+               Input();
+            }
+            
+        }
         else if(a==3)
-        matrix[0][2]= player;
+        {
+            if (matrix[0][2] =='3')
+                matrix[0][2]= player;
+            else
+            {
+               cout<<"Field is occupied Try Again!"<< endl;
+               Input();
+            }
+            
+        }
         else if(a==4)
-        matrix[1][0]= player;
+        {
+            if (matrix[1][0] =='4')
+                matrix[1][0]= player;
+            else
+            {
+               cout<<"Field is occupied Try Again!"<< endl;
+               Input();
+            }
+            
+        }
         else if(a==5)
-        matrix[1][1]= player;
+        {
+            if (matrix[1][1] =='5')
+                matrix[1][1]= player;
+            else
+            {
+               cout<<"Field is occupied Try Again!"<< endl;
+               Input();
+            }
+            
+        }
         else if(a==6)
-        matrix[1][2]= player;
+        {
+            if (matrix[1][2] =='6')
+                matrix[1][2]= player;
+            else
+            {
+               cout<<"Field is occupied Try Again!"<< endl;
+               Input();
+            }
+            
+        }
         else if(a==7)
-        matrix[2][0]= player;
+        {
+            if (matrix[2][0] =='7')
+                matrix[2][0]= player;
+            else
+            {
+               cout<<"Field is occupied Try Again!"<< endl;
+               Input();
+            }
+            
+        }
         else if(a==8)
-        matrix[2][1]= player;
+        {
+            if (matrix[2][1] =='8')
+                matrix[2][1]= player;
+            else
+            {
+               cout<<"Field is occupied Try Again!"<< endl;
+               Input();
+            }
+            
+        }
         else if(a==9)
-        matrix[2][2]= player;
-        
+        {
+            if (matrix[2][2] =='9')
+                matrix[2][2]= player;
+            else
+            {
+               cout<<"Field is occupied Try Again!"<< endl;
+               Input();
+            }
+            
+        }
     }
+             
+   
     
     // here we need to toggle the player, so we will create another function to change the player
 
@@ -129,6 +211,7 @@ char Win(){
 
 //    SECOND PLAYER
 }
+
 int main()
 {    
     n = 0;
@@ -141,7 +224,7 @@ int main()
         n++;
         Input();
         Draw();
-        if (Win() == 'X')
+        if ( Win() == 'X')
         {
             cout<<"X wins!";
             break;
@@ -156,6 +239,9 @@ int main()
             break;
         }
         
+
+        //  Now we need to check if  the field is already occupied or not and to do this we need to do this we need to track if the field if occupied or not.
+
         TogglePlayer();
     }
     
