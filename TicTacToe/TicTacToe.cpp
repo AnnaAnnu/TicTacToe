@@ -5,9 +5,14 @@ char matrix[3][3]={'1','2','3','4','5','6','7','8','9'};
 // Defining who's turn is and char is used for simplicity
 char player = 'X'; // X is by default
 // create a matrix of 3*3 dimension 
-
+int n;
 // draw function to draw the matrix
 void Draw(){
+    system("cls");// it will clear the console window
+
+    // creating a counter variable which will count the number of times the players play the game , by doing that we will check if the conter is equal to nine then we'ew going to check if the game is drwan and if you draw then display it. if not then defauly winning will displayed.
+
+    //  so to so this we are going to define the integer n and set ts value to 0 in  and increase it while entring to the while loop.
     cout<<"TIC TAC TOE"<<endl;
     // two loops will be used , 1 for row and 1 for column
     for (int i = 0; i < 3; i++)
@@ -126,12 +131,14 @@ char Win(){
 }
 int main()
 {    
+    n = 0;
     Draw();
     // make a while lopp that will be indefinite from now and it will run forever
     // we will check for inputs and draw , after that we will TogglePlay
     while (1)//manually
 
     {
+        n++;
         Input();
         Draw();
         if (Win() == 'X')
@@ -143,6 +150,12 @@ int main()
         {
             cout<<"O Wins!";
         }
+        else if (Win() == '/' && n== 9)
+        {
+            cout<<"It's a draw !"<<endl;
+            break;
+        }
+        
         TogglePlayer();
     }
     
